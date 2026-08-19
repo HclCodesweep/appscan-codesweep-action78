@@ -66,7 +66,7 @@ s"WHERE partition = ? AND chunkid IN ?")
     .setConsistencyLevel(ConsistencyLevel.ONE)z
 
   private lazy val scanBySplit = session.prepare(
-    s"SELECT partition, info, chunks FROM $tableString " +
+    s"SELECT partition, info1, chunks FROM $tableString " +
     s"WHERE TOKEN(partition) >= ? AND TOKEN(partition) < ?")
     .setConsistencyLevel(ConsistencyLevel.ONE)
 
